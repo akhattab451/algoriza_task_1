@@ -1,3 +1,4 @@
+import 'package:algoriza_task_1/screens/sign_up_screen.dart';
 import 'package:algoriza_task_1/widgets/authenticate.dart';
 import 'package:algoriza_task_1/widgets/my_button.dart';
 import 'package:algoriza_task_1/widgets/sign_with_google.dart';
@@ -17,6 +18,8 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   final _phoneController = TextEditingController();
 
+  final _formKey = GlobalKey<FormState>();
+
   @override
   void dispose() {
     _phoneController.dispose();
@@ -26,15 +29,24 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
       body: Authenticate(
-        header: 'Sign In',
+        title: 'Sign In',
+        header: Expanded(
+          child: Image.asset(
+            'assets/background.jpg',
+            fit: BoxFit.cover,
+            width: double.infinity,
+          ),
+        ),
         onHelpPressed: () {},
         form: Form(
+          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -57,7 +69,14 @@ class _SignInScreenState extends State<SignInScreen> {
               RichTextAction(
                 description: 'Don\'t have an account? ',
                 actionText: 'Sign Up',
-                action: () {},
+                action: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignUpScreen(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 24.0),
               Align(

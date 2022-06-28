@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class Authenticate extends StatelessWidget {
   final Widget form;
-  final String header;
+  final Widget? header;
+  final String title;
   final VoidCallback onHelpPressed;
   const Authenticate({
     required this.form,
-    required this.header,
+    required this.title,
+    this.header,
     required this.onHelpPressed,
     Key? key,
   }) : super(key: key);
@@ -16,13 +18,7 @@ class Authenticate extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
-          child: Image.asset(
-            'assets/background.jpg',
-            fit: BoxFit.cover,
-            width: double.infinity,
-          ),
-        ),
+        if (header != null) header!,
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -34,7 +30,7 @@ class Authenticate extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    header,
+                    title,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 26.0,

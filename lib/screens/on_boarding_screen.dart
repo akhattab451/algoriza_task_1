@@ -1,3 +1,4 @@
+import 'package:algoriza_task_1/screens/sign_in_screen.dart';
 import 'package:algoriza_task_1/widgets/slide.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -127,7 +128,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               MyButton(
                 text: 'Get Started',
                 color: const Color(0xFF00E6B3),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignInScreen(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 16.0),
               RichText(
