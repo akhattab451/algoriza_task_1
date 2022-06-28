@@ -22,7 +22,7 @@ class SignWithGoogleButton extends StatelessWidget {
           height: 24.0,
           width: 24.0,
         ),
-        label: const Text('Sign with google'),
+        label: const Text('Sign with Google'),
       ),
     );
   }

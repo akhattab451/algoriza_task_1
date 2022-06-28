@@ -34,47 +34,43 @@ class _SignInScreenState extends State<SignInScreen> {
       body: Authenticate(
         header: 'Sign In',
         onHelpPressed: () {},
-        form: Column(
-          children: [
-            Form(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text('Phone Number'),
-                  const SizedBox(height: 6.0),
-                  CountryPickerField(phoneController: _phoneController),
-                ],
+        form: Form(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Phone Number'),
+              const SizedBox(height: 6.0),
+              CountryPickerField(phoneController: _phoneController),
+              const SizedBox(height: 16.0),
+              MyButton(
+                text: 'Sign In',
+                color: Colors.blue,
+                textColor: Colors.white,
+                radius: 5.0,
+                onPressed: () {},
               ),
-            ),
-            const SizedBox(height: 16.0),
-            MyButton(
-              text: 'Sign In',
-              color: Colors.blue,
-              textColor: Colors.white,
-              radius: 5.0,
-              onPressed: () {},
-            ),
-            const SizedBox(height: 16.0),
-            const Align(child: Text('Or')),
-            const SizedBox(height: 16.0),
-            SignWithGoogleButton(onTap: () {}),
-            const SizedBox(height: 30.0),
-            RichTextAction(
-              description: 'Don\'t have an account? ',
-              actionText: 'Sign Up',
-              action: () {},
-            ),
-            const SizedBox(height: 36.0),
-            Align(
-              child: Text(
-                'Use the application according to policy rules. Any kinds of violations will be subject to sanctions.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.grey.shade600,
+              const SizedBox(height: 12.0),
+              const Align(child: Text('Or')),
+              const SizedBox(height: 12.0),
+              SignWithGoogleButton(onTap: () {}),
+              const SizedBox(height: 24.0),
+              RichTextAction(
+                description: 'Don\'t have an account? ',
+                actionText: 'Sign Up',
+                action: () {},
+              ),
+              const SizedBox(height: 24.0),
+              Align(
+                child: Text(
+                  'Use the application according to policy rules. Any kinds of violations will be subject to sanctions.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.grey.shade600,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

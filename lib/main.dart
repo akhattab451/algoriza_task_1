@@ -1,5 +1,6 @@
 import 'package:algoriza_task_1/screens/on_boarding_screen.dart';
 import 'package:algoriza_task_1/screens/sign_in_screen.dart';
+import 'package:algoriza_task_1/screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           contentPadding: EdgeInsets.all(10.0),
         ),
       ),
-      home: const SignInScreen(),
+      home: const SignUpScreen(),
     );
   }
 }

@@ -5,10 +5,14 @@ class RichTextAction extends StatelessWidget {
   final String description;
   final String actionText;
   final VoidCallback action;
+  final FontWeight fontWeight;
+  final double fontSize;
   const RichTextAction({
     required this.description,
     required this.actionText,
     required this.action,
+    this.fontWeight = FontWeight.bold,
+    this.fontSize = 16.0,
     Key? key,
   }) : super(key: key);
 
@@ -20,8 +24,8 @@ class RichTextAction extends StatelessWidget {
           text: description,
           style: TextStyle(
             color: Colors.grey.shade600,
-            fontWeight: FontWeight.bold,
-            fontSize: 16.0,
+            fontWeight: fontWeight,
+            fontSize: fontSize,
           ),
           children: [
             TextSpan(

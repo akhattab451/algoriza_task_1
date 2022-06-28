@@ -65,7 +65,7 @@ class Authenticate extends StatelessWidget {
               ),
               const SizedBox(height: 16.0),
               form,
-              const SizedBox(height: 36.0),
+              const SizedBox(height: 24.0),
             ],
           ),
         ),
