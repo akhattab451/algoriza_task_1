@@ -1,4 +1,5 @@
 import 'package:algoriza_task_1/screens/on_boarding_screen.dart';
+import 'package:algoriza_task_1/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,8 +16,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        inputDecorationTheme: const InputDecorationTheme(
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(5.0))),
+          contentPadding: EdgeInsets.all(10.0),
+        ),
       ),
-      home: const OnBoardingScreen(),
+      home: const SignInScreen(),
     );
   }
 }

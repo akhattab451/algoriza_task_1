@@ -124,9 +124,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 }).toList(),
               ),
               const SizedBox(height: 16.0),
-              const MyButton(
+              MyButton(
                 text: 'Get Started',
-                color: Color(0xFF00E6B3),
+                color: const Color(0xFF00E6B3),
+                onPressed: () {},
               ),
               const SizedBox(height: 16.0),
               RichText(
