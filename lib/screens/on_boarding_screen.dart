@@ -1,9 +1,12 @@
 import 'package:algoriza_task_1/screens/sign_in_screen.dart';
+import 'package:algoriza_task_1/screens/sign_up_screen.dart';
+import 'package:algoriza_task_1/widgets/rich_text_button.dart';
 import 'package:algoriza_task_1/widgets/slide.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/my_button.dart';
+import '../colors.dart';
+import '../widgets/app_button.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -15,13 +18,13 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   static const _slideList = [
     {
-      'imagePath': 'assets/courier.png',
+      'imagePath': 'assets/images/courier.png',
       'headerText': 'Get food delivery to your doorstep asap',
       'subText':
           'We have young and professional delivery team that will bring your food to your doorstep as soon as possible',
     },
     {
-      'imagePath': 'assets/delivered.png',
+      'imagePath': 'assets/images/delivered.png',
       'headerText': 'Buy any food from your favorite restaurant',
       'subText':
           'We are constantly adding your favorite restaurants throughout the territory and around your area carefully selected',
@@ -71,7 +74,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   children: [
                     TextSpan(
                       text: 'Krave',
-                      style: TextStyle(color: Color(0xFF00E6B3)),
+                      style: TextStyle(color: primary),
                     )
                   ],
                 ),
@@ -116,7 +119,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       decoration: BoxDecoration(
                         color: (Theme.of(context).brightness == Brightness.dark
                                 ? Colors.white
-                                : const Color(0xFF142664))
+                                : secondary)
                             .withOpacity(
                                 _slidePosition == entry.key ? 1.0 : 0.5),
                       ),
@@ -125,9 +128,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 }).toList(),
               ),
               const SizedBox(height: 16.0),
-              MyButton(
+              AppButton(
                 text: 'Get Started',
-                color: const Color(0xFF00E6B3),
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
@@ -138,22 +140,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 },
               ),
               const SizedBox(height: 16.0),
-              RichText(
-                text: TextSpan(
-                  text: 'Don\'t have an account? ',
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16.0,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: 'Sign Up',
-                      recognizer: TapGestureRecognizer()..onTap = () {},
-                      style: const TextStyle(color: Color(0xFF00E6B3)),
-                    )
-                  ],
-                ),
+              RichTextButton(
+                text: 'Don\'t have an account? ',
+                clickableText: 'Sign Up',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (c) => const SignUpScreen()),
+                  );
+                },
               ),
               const SizedBox(height: 24.0),
             ],

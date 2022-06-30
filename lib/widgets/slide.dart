@@ -21,8 +21,8 @@ class Slide extends StatelessWidget {
           textAlign: TextAlign.center,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 26.0,
-            height: 1.3,
+            fontSize: 24.0,
+            height: 1.2,
           ),
         ),
         const SizedBox(height: 10.0),
@@ -30,7 +30,6 @@ class Slide extends StatelessWidget {
           subText,
           textAlign: TextAlign.center,
           style: const TextStyle(
-            fontSize: 16.0,
             color: Colors.black54,
           ),
         ),

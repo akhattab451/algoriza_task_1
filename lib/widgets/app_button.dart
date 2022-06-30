@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyButton extends StatelessWidget {
+import '../colors.dart';
+
+class AppButton extends StatelessWidget {
   final String text;
-  final Color? color;
-  final Color? textColor;
   final VoidCallback onPressed;
   final double radius;
-  const MyButton({
+  const AppButton({
     required this.text,
-    required this.color,
-    this.textColor,
     required this.onPressed,
     this.radius = 8.0,
     Key? key,
@@ -22,8 +20,8 @@ class MyButton extends StatelessWidget {
       height: 50.0,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            primary: color,
-            onPrimary: textColor ?? Colors.black,
+            primary: primary,
+            onPrimary: Colors.black87,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(radius),
             )),

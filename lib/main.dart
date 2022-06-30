@@ -13,13 +13,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: '7Krave',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        fontFamily: 'Roboto',
         inputDecorationTheme: const InputDecorationTheme(
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5.0))),
           contentPadding: EdgeInsets.all(10.0),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(5.0)),
+          ),
         ),
       ),
       home: const OnBoardingScreen(),
